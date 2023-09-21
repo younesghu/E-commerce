@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,7 +14,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(5)->create();
+
+         Product::create([
+                'name' => 'Iphone',
+                'description' => 'Newest technology from Apple just came out this weekend',
+                'price' => '999.99',
+                'stock_quantity' => '10'
+         ]);
+
+         Product::create([
+                'name' => 'MacBook',
+                'description' => 'Newest technology from Apple just came out this weekend, so hard to get',
+                'price' => '2000.00',
+                'stock_quantity' => '5'
+         ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
