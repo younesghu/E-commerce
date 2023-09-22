@@ -12,11 +12,7 @@
                 <a href="/products/{{$product->id}}">{{$product->name}}</a>
             </h3>
             <div class="text-xl font-bold mb-4">${{$product->price}}</div>
-            <ul class="flex">
-                <li class="bg-laravel text-black rounded-xl px-3 py-1 mr-2 mb-3">
-                    <a href="#">{{$product->categories}}</a>
-                </li>
-            </ul>
+            <x-product-categories :categoriesCsv="$product->categories"/>
         </div>
     </div>
 </x-card>

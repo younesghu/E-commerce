@@ -14,13 +14,9 @@
 
             <h3 class="text-2xl font-bold mb-2">{{$product->name}}</h3>
             <div class="text-xl mb-4 ">${{$product->price}}</div>
-            <ul class="flex">
-                <li
-                    class="bg-laravel text-black rounded-xl px-3 py-1 mr-2 mb-3"
-                >
-                    <a href="#">{{$product->categories}}</a>
-                </li>
-            </ul>
+
+                <x-product-categories :categoriesCsv="$product->categories"/>
+
             <div class="border border-gray-200 w-full mb-6"></div>
 
                 <div class="text-lg space-y-6">
