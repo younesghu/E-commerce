@@ -30,6 +30,19 @@ class DatabaseSeeder extends Seeder
                 'stock_quantity' => '5'
          ]);
 
+         Product::create([
+                'name' => 'Monitor',
+                'description' => 'SAMSUNG 22 inch Full HD LED Backlit VA Panel',
+                'price' => '500.00',
+                'stock_quantity' => '10'
+         ]);
+         Product::create([
+                'name' => 'Printer.00',
+                'description' => 'HP DeskJet 2331 Multi-function Color Inkjet Printer with Scanner and Copier , Compact Size, Reliable, Easy Set-Up Through HP Smart App On Your PC Connected Through USB, Ideal for Home',
+                'price' => '400',
+                'stock_quantity' => '5'
+         ]);
+
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
