@@ -20,8 +20,9 @@ Route::get('/', function () {
         'products' => Product::all()
     ]);
 });
-Route::get('/products/{id}', function($id){
+// Single Product
+Route::get('/products/{product}', function(Product $product){
     return view('product', [
-        'product' => Product::find($id)
+        'product' => $product
     ]);
 });
