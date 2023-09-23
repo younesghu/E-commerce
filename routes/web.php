@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -13,16 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// All Products
+Route::get('/',  [ProductController::class, 'index']);
 
-Route::get('/', function () {
-    return view('products', [
-        'heading' => 'Latest Products',
-        'products' => Product::all()
-    ]);
-});
 // Single Product
-Route::get('/products/{product}', function(Product $product){
-    return view('product', [
-        'product' => $product
-    ]);
-});
+Route::get('/products/{product}', [ProductController::class, 'show']);
