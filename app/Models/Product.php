@@ -9,6 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
+    // AppServiceProvider -> boot -> Model::unguard(); -- this basically lets your model to be fillable
+   // protected $fillable = ['name', 'price', 'stock_quantity', 'categories', 'description'];
+
     // This function filters each category from each product then returns all products with the same category
     public function scopeFilter($query, array $filters){
         if($filters['category'] ?? false){

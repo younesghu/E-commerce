@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -51,10 +52,11 @@
         <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-20 mt-24 opacity-90 md:justify-center">
         <p class="ml-2 text-black">Copyright &copy; 2023, All Rights reserved</p>
         <a
-            href="create.html"
+            href="/products/create"
             class="absolute top-1/4 right-10 bg-black text-white py-2 px-5">
             Add A Product
         </a>
         </footer>
+        <x-flash-message />
     </body>
 </html>

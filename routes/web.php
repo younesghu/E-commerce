@@ -17,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 // All Products
 Route::get('/',  [ProductController::class, 'index']);
 
+// Show Create Form
+Route::get('/products/create', [ProductController::class, 'create']);
+
+// Store Product Data
+Route::post('/products', [ProductController::class, 'store']);
+
+
+
 // Single Product
 Route::get('/products/{product}', [ProductController::class, 'show']);

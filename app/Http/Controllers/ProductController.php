@@ -10,7 +10,7 @@ class ProductController extends Controller
     // Show all products
     public function index(){
         return view('products.index', [
-            'products' => Product::latest()->filter(request(['category', 'search']))->get()
+            'products' => Product::latest()->filter(request(['category', 'searchprod']))->get()
         ]);
     }
 
@@ -19,6 +19,27 @@ class ProductController extends Controller
         return view('products.show', [
             'product' => $product
         ]);
+    }
+
+    // Show create form
+    public function create(){
+        return view('products.create');
+    }
+
+     // Store Product data
+     public function store(Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'stock_quantity' => 'required',
+            'categories' => 'required',
+            'description' => 'required'
+        ]);
+
+        // This method is in charge of adding a new listing
+        Product::create($data);
+
+        return redirect('/')->with('message', 'Product added successfully!');
     }
 
 }
