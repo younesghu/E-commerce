@@ -6,7 +6,7 @@
             >
                 <img
                     class="w-48 mr-6 mb-6"
-                    src="{{asset('images/no-image2.png')}}"
+                    src="{{$product->image_url ? asset('storage/' . $product->image_url) : asset('images/no-image2.png')}}"
                     alt=""
                 />
 

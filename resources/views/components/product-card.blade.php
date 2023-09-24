@@ -4,7 +4,7 @@
     <div class="flex">
         <img
             class="hidden w-48 mr-6 md:block"
-            src="{{asset('images/no-image2.png')}}"
+            src="{{$product->image_url ? asset('storage/' . $product->image_url) : asset('images/no-image2.png')}}"
             alt=""
         />
         <div>

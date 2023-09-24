@@ -8,7 +8,7 @@
         </h2>
     </header>
 
-    <form method="POST" action="/products">
+    <form method="POST" action="/products" enctype="multipart/form-data">
         @csrf
         <div class="mb-6">
             <label for="name" class="inline-block text-lg mb-2">
@@ -50,12 +50,15 @@
             @enderror
         </div>
 
-        {{-- <div class="mb-6">
+        <div class="mb-6">
             <label for="image_url" class="inline-block text-lg mb-2">
                 Product Image
             </label>
             <input type="file" class="border border-gray-200 rounded p-2 w-full" name="image_url"/>
-        </div> --}}
+            @error('image_url')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+        </div>
 
         <div class="mb-6">
             <label for="description" class="inline-block text-lg mb-2">

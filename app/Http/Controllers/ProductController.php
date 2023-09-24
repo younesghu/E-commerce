@@ -36,7 +36,12 @@ class ProductController extends Controller
             'description' => 'required'
         ]);
 
+        if($request->hasFile('image_url')){
+            $data['image_url'] = $request->file('image_url')->store('logos', 'public');
+        }
+
         // This method is in charge of adding a new listing
+
         Product::create($data);
 
         return redirect('/')->with('message', 'Product added successfully!');
