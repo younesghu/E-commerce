@@ -29,5 +29,11 @@ Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
 // Update Product
 Route::put('/products/{product}', [ProductController::class, 'update']);
 
+// Delete Product
+Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+
 // Single Product
 Route::get('/products/{product}', [ProductController::class, 'show']);
+
+
+// Register User

@@ -1,9 +1,16 @@
 <x-layout>
     <div class="mx-4">
         <x-card>
+            {{-- Edit Product link --}}
             <a href="/products/{{$product->id}}/edit">
-                <i class="fa-solid fa-pencil"></i> Edit
+                <i class="fa-solid fa-pencil mb-3" ></i> Edit
             </a>
+            {{-- Delete Product link --}}
+            <form method="POST" action="/products/{{$product->id}}">
+                @csrf
+                @method('DELETE')
+                <button class="text-red-500"><i class="fa-solid fa-trash mt-3"></i> Delete</button>
+            </form>
             <div
                 class="flex flex-col items-center justify-center text-center"
             >
@@ -40,11 +47,7 @@
         </x-card>
         {{-- <x-card class="mt-4 p-2 flex space-x-6"> --}}
 
-            {{-- <form method="POST" action="/listings/{{$listing->id}}">
-                @csrf
-                @method('DELETE')
-                <button class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</button>
-            </form> --}}
+
         {{-- </x-card> --}}
     </div>
 </x-layout>

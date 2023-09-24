@@ -70,4 +70,9 @@ class ProductController extends Controller
 
         return redirect('/')->with('message', 'Product updated successfully!');
     }
+
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect('/')->with('message', 'Listing deleted successfully!');
+    }
 }
