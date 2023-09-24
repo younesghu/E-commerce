@@ -20,7 +20,7 @@ class="relative h-72 bg-laravel flex flex-col justify-center align-center text-c
 
 <div class="z-10">
     <h1 class="text-6xl font-bold uppercase text-white">
-        Electro<span class="text-black">Store</span>
+        MYStore<span class="text-black">Electronics</span>
     </h1>
     <p class="text-2xl text-black-200 font-bold my-4">
         Find or add an Electronical product

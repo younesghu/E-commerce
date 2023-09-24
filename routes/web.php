@@ -23,7 +23,11 @@ Route::get('/products/create', [ProductController::class, 'create']);
 // Store Product Data
 Route::post('/products', [ProductController::class, 'store']);
 
+// Show Edit Form
+Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
 
+// Update Product
+Route::put('/products/{product}', [ProductController::class, 'update']);
 
 // Single Product
 Route::get('/products/{product}', [ProductController::class, 'show']);

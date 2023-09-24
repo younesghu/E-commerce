@@ -10,8 +10,8 @@
                     alt=""
                 />
 
-                <h3 class="text-2xl font-bold mb-2">{{$product->name}}</h3>
-                <div class="text-xl mb-4 ">${{$product->price}}</div>
+                <h3 class="text-2xl mb-2">{{$product->name}}</h3>
+                <div class="text-xl font-bold mb-4 ">${{$product->price}}</div>
 
                     <x-product-categories :categoriesCsv="$product->categories"/>
 
@@ -34,6 +34,16 @@
                             ><i class="fa-solid text-black fa-phone"></i> (+212) 770-983-062</a>
                     </div>
             </div>
+        </x-card>
+        <x-card class="mt-4 p-2 flex space-x-6">
+            <a href="/products/{{$product->id}}/edit">
+                <i class="fa-solid fa-pencil"></i> Edit
+            </a>
+            {{-- <form method="POST" action="/listings/{{$listing->id}}">
+                @csrf
+                @method('DELETE')
+                <button class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</button>
+            </form> --}}
         </x-card>
     </div>
 </x-layout>
