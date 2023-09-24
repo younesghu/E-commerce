@@ -29,7 +29,7 @@ class="relative h-72 bg-laravel flex flex-col justify-center align-center text-c
         <a
             href=""
             class="inline-block border-2 border-black text-black py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
-            >Sign Up to List a Gig</a
+            >Sign Up to a Product</a
         >
     </div>
 </div>
