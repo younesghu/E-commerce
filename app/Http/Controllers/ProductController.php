@@ -54,6 +54,12 @@ class ProductController extends Controller
 
      // Store Product data
      public function update(Request $request, Product $product){
+
+        // Make sure logged in user is owner
+        if($product->user_id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
+
         $data = $request->validate([
             'name' => 'required',
             'price' => 'required',
