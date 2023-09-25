@@ -42,6 +42,8 @@ class ProductController extends Controller
 
         // This method is in charge of adding a new listing
 
+        $data['user_id'] = auth()->id();
+
         Product::create($data);
 
         return redirect('/')->with('message', 'Product added successfully!');
@@ -72,7 +74,15 @@ class ProductController extends Controller
     }
 
     public function destroy(Product $product){
+        if($product->user_id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
         $product->delete();
-        return redirect('/')->with('message', 'Listing deleted successfully!');
+        return redirect('/')->with('message', 'Product deleted successfully!');
+    }
+
+     // Manage Product
+     public function manage(){
+        return view ('products.manage', ['products' => auth()->user()->products()->get()]);
     }
 }

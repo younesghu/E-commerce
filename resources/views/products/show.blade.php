@@ -5,12 +5,12 @@
             <a href="/products/{{$product->id}}/edit">
                 <i class="fa-solid fa-pencil mb-3" ></i> Edit
             </a>
-            {{-- Delete Product link --}}
-            <form method="POST" action="/products/{{$product->id}}">
+            {{-- Delete Product link added to Manage Products --}}
+            {{-- <form method="POST" action="/products/{{$product->id}}">
                 @csrf
                 @method('DELETE')
                 <button class="text-red-500"><i class="fa-solid fa-trash mt-3"></i> Delete</button>
-            </form>
+            </form> --}}
             <div
                 class="flex flex-col items-center justify-center text-center"
             >

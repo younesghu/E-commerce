@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,22 +19,37 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [ProductController::class, 'index']);
 
 // Show Create Form
-Route::get('/products/create', [ProductController::class, 'create']);
+Route::get('/products/create', [ProductController::class, 'create'])->middleware('auth');
 
 // Store Product Data
-Route::post('/products', [ProductController::class, 'store']);
+Route::post('/products', [ProductController::class, 'store'])->middleware('auth');
 
 // Show Edit Form
-Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->middleware('auth');
 
 // Update Product
-Route::put('/products/{product}', [ProductController::class, 'update']);
+Route::put('/products/{product}', [ProductController::class, 'update'])->middleware('auth');
 
 // Delete Product
-Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->middleware('auth');
+
+// Manage Products
+ Route::get('/products/manage', [ProductController::class, 'manage']);
 
 // Single Product
 Route::get('/products/{product}', [ProductController::class, 'show']);
 
-
 // Register User
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+
+// Create new User
+Route::post('/users', [UserController::class, 'store']);
+
+// Log User out
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+// Show Login form
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+// Log in User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
