@@ -115,14 +115,5 @@ class ProductController extends Controller
         return redirect()->back()->with('message', 'Product has been added to cart!');
     }
 
-    public function deleteCartProduct(Request $request){
-        $cart = session()->get('cart');
-        if($request->id){
-            if(isset($cart[$request->id])){
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('message', 'Product successfully removed!');
-        }
-    }
+
 }

@@ -14,7 +14,6 @@
         />
         <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
         <script>
             tailwind.config = {
                 theme: {
@@ -36,7 +35,7 @@
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
                 <a class="btn btn-outline-dark" href="{{ route('shopping.cart') }}">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart {{ count((array) session('cart')) }}</span>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span>
                 </a>
                 <li>
                     <span class="text-sm uppercase">

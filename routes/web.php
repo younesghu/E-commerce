@@ -58,7 +58,4 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::get('/shopping-cart', [ProductController::class, 'productCart'])->name('shopping.cart');
 
 //
-Route::get('/product/{id}', [ProductController::class, 'addProducttoCart'])->name('addproduct.to.cart');
-
 //
-Route::delete('/delete-cart-product', [ProductController::class, 'deleteCartProduct'])->name('delete.cart.product');
