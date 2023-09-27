@@ -91,4 +91,38 @@ class ProductController extends Controller
      public function manage(){
         return view ('products.manage', ['products' => auth()->user()->products()->get()]);
     }
+
+
+    public function productCart(){
+            return view('products.cart');
+    }
+
+    //
+    public function addProducttoCart($id){
+        $product = Product::findOrFail($id);
+        $cart = session()->get('cart', []);
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else{
+            $cart[$id] = [
+                "name" => $product->name,
+                "quantity" => 1,
+                "price" => $product->price,
+                "image" => $product->image_url
+            ];
+        }
+        session()->put('cart', $cart);
+        return redirect()->back()->with('message', 'Product has been added to cart!');
+    }
+
+    public function deleteCartProduct(Request $request){
+        $cart = session()->get('cart');
+        if($request->id){
+            if(isset($cart[$request->id])){
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('message', 'Product successfully removed!');
+        }
+    }
 }

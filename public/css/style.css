@@ -1,0 +1,32 @@
+#cart {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style table header */
+#cart th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Style table rows */
+#cart tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style table cells */
+#cart td {
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Style the product image */
+#cart img {
+    max-width: 60px;
+    max-height: 60px;
+    display: block;
+    margin: 0 auto;
+}

@@ -13,6 +13,10 @@
             </h3>
             <div class="text-xl font-bold mb-4">${{$product->price}}</div>
             <x-product-categories :categoriesCsv="$product->categories"/>
+                <a href="{{ route('addproduct.to.cart', $product->id) }}" class="hover:text-laravel">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Add to cart
+                </a>
         </div>
     </div>
 </x-card>
