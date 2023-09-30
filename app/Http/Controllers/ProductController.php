@@ -92,28 +92,9 @@ class ProductController extends Controller
         return view ('products.manage', ['products' => auth()->user()->products()->get()]);
     }
 
-
-    public function productCart(){
-            return view('products.cart');
+    // Add product to cart
+    public function addtocart(){
+        return redirect('/');
     }
-
-    //
-    public function addProducttoCart($id){
-        $product = Product::findOrFail($id);
-        $cart = session()->get('cart', []);
-        if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-        } else{
-            $cart[$id] = [
-                "name" => $product->name,
-                "quantity" => 1,
-                "price" => $product->price,
-                "image" => $product->image_url
-            ];
-        }
-        session()->put('cart', $cart);
-        return redirect()->back()->with('message', 'Product has been added to cart!');
-    }
-
 
 }

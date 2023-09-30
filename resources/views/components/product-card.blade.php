@@ -13,10 +13,13 @@
             </h3>
             <div class="text-xl font-bold mb-4">${{$product->price}}</div>
             <x-product-categories :categoriesCsv="$product->categories"/>
-                <a href="/" class="hover:text-laravel">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    Add to cart
-                </a>
+            <form action="/addtocart" method="POST">
+                @csrf
+                <button class="bg-black text-white text-xs p-0.5 rounded hover:text-laravel">
+                    Add to Cart
+                </button>
+            </form>
+
         </div>
     </div>
 </x-card>

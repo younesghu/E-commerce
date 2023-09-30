@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -58,4 +59,4 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::get('/shopping-cart', [ProductController::class, 'productCart'])->name('shopping.cart');
 
 //
-//
+Route::post('/addtocart', [ProductController::class, 'addtocart']);
