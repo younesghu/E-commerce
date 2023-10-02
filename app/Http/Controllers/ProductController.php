@@ -92,9 +92,4 @@ class ProductController extends Controller
         return view ('products.manage', ['products' => auth()->user()->products()->get()]);
     }
 
-    // Add product to cart
-    public function addtocart(){
-        return redirect('/');
-    }
-
 }
