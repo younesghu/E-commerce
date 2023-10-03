@@ -65,7 +65,7 @@ E-commerce project made with PHP Laravel, this project idea has been given me by
 ![14](https://github.com/younesghu/E-commerce/assets/142607475/70f5477f-e01c-41b8-9e99-d040b608a1c2)
 
 <p>
-    As you can everything has been added to my cart wit the ability to remove anything as the user wishes. Total is calculated as well, if you wish to checkout.    
+    As you can see everything has been added to my cart with the ability to remove anything as the user wishes. Total is calculated as well, if you wish to checkout.    
 </p>
 
 ![11](https://github.com/younesghu/E-commerce/assets/142607475/49adc885-2e5f-465a-bbb4-605bd7901c90)
