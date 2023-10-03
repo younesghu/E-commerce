@@ -15,6 +15,8 @@
             <x-product-categories :categoriesCsv="$product->categories"/>
             <form action="/addtocart" method="POST">
                 @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <input class="bg-white text-black text-xs p-0.5 rounded border border-laravel-500" type="number" name="quantity" value="1">
                 <button class="bg-black text-white text-xs p-0.5 rounded hover:text-laravel">
                     Add to Cart
                 </button>

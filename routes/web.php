@@ -56,7 +56,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Show cart
-Route::get('/products/cart', [CartController::class, 'showcart'])->name('shopping.cart');
+Route::get('/cart/show', [CartController::class, 'showcart'])->name('cart.show');
 
 // Add Product to Cart
-Route::post('/addtocart', [ProductController::class, 'addtocart']);
+Route::post('/addtocart', [CartController::class, 'addtocart']);

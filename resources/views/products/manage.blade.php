@@ -12,8 +12,6 @@
             <tbody>
                 @unless ($products->isEmpty())
                     @foreach ($products as $product)
-
-
                     <tr class="border-gray-300">
                         <td
                             class="px-4 py-8 border-t border-b border-gray-300 text-lg"

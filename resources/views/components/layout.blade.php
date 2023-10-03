@@ -34,8 +34,10 @@
             </a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
-                <a class="btn btn-outline-dark" href="{{ route('shopping.cart') }}">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span>
+                <a href="/cart/show" class="btn btn-outline-dark">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                     Cart
+                    </span>
                 </a>
                 <li>
                     <span class="text-sm uppercase">
