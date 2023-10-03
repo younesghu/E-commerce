@@ -5,7 +5,7 @@
             <h1
                 class="text-3xl text-center font-bold my-6 uppercase"
             >
-                Manage Cart
+                Shopping Cart
             </h1>
         </header>
 
@@ -41,8 +41,14 @@
                             ${{ $cart->product->price * $cart->quantity }}
                         </td>
                         <td class="actions">
-                            <a class="btn btn-outline-danger btn-sm "><i class="text-red-500 fa-solid fa-trash"></i></a>
+                        <form method="POST" action="/cart/{{$cart->id}}">
+                            @csrf
+                            @method('DELETE')
+                            <button>
+                                <a class="btn btn-outline-danger btn-sm "><i class="text-red-500 fa-solid fa-trash"></i></a>
+                            </button>
                         </td>
+                        </form>
                     </tr>
                 @endforeach
                 @else

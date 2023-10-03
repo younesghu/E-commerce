@@ -60,3 +60,6 @@ Route::get('/cart/show', [CartController::class, 'showcart'])->name('cart.show')
 
 // Add Product to Cart
 Route::post('/addtocart', [CartController::class, 'addtocart']);
+
+// Delete Product
+Route::delete('/cart/{cart}', [CartController::class, 'destroy'])->middleware('auth');

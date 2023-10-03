@@ -39,6 +39,11 @@ class CartController extends Controller
 
         return view('cart.show', compact('carts'));
     }
+    public function destroy(Cart $cart){
+        $cart->delete();
+        return redirect()->back()->with('message', 'Item removed successfully!');
+    }
+
 
 
 }
