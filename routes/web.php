@@ -56,10 +56,10 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Show cart
-Route::get('/cart/show', [CartController::class, 'showcart'])->name('cart.show');
+Route::get('/cart/show', [CartController::class, 'showcart'])->name('cart.show')->middleware('auth');
 
 // Add Product to Cart
-Route::post('/addtocart', [CartController::class, 'addtocart']);
+Route::post('/addtocart', [CartController::class, 'addtocart'])->middleware('auth');
 
 // Delete Product
 Route::delete('/cart/{cart}', [CartController::class, 'destroy'])->middleware('auth');

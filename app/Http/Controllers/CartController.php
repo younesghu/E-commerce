@@ -33,12 +33,23 @@ class CartController extends Controller
 
         return redirect()->back()->with('message', 'Item added to cart');
     }
+
+
     public function showcart(){
         $user = Auth::user();
         $carts = Cart::where('user_id', $user->id)->with('product')->get();
 
-        return view('cart.show', compact('carts'));
+        $cartTotal = 0;
+
+        foreach ($carts as $cart) {
+            $itemTotal = $cart->quantity * $cart->product->price;
+            $cartTotal += $itemTotal;
+        }
+
+        // Pass the cart total to the view
+        return view('cart.show', compact('carts', 'cartTotal'));
     }
+
     public function destroy(Cart $cart){
         $cart->delete();
         return redirect()->back()->with('message', 'Item removed successfully!');

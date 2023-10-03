@@ -8,8 +8,7 @@
                 Shopping Cart
             </h1>
         </header>
-        @unless ($carts->isEmpty())
-            @foreach($carts as $cart)
+
                 <table id="cart" class="">
                 <tr>
                     <th>Product</th>
@@ -19,6 +18,8 @@
                     <th>Remove</th>
                 </tr>
                     <tbody>
+                    @unless ($carts->isEmpty())
+                    @foreach($carts as $cart)
                         <tr>
                             <td class="">
                                 <p>{{ $cart->product->name }}</p>
@@ -26,7 +27,7 @@
                             </td>
                             <td class="">
                                 <p>
-                                    ${{ $cart->product->price }}
+                                    ${{ number_format($cart->product->price) }}
                                 </p>
                             </td>
                             <td class="">
@@ -35,7 +36,7 @@
                                 </p>
                             </td>
                             <td>
-                                ${{ $cart->product->price * $cart->quantity }}
+                                ${{ number_format($cart->product->price * $cart->quantity) }}
                             </td>
                             <td class="actions">
                                 <form method="POST" action="/cart/{{$cart->id}}">
@@ -48,6 +49,15 @@
                             </td>
                         </tr>
                     @endforeach
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <p>SubTotal : <strong>${{ number_format($cartTotal) }}</strong></p>
+                        </td>
+                        <td></td>
+                    </tr>
                     @else
                     <tr class="border-gray-300">
                         <td class="px-4 py-8 border-t border-b border-gray-300">
