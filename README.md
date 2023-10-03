@@ -7,7 +7,7 @@ E-commerce project made with PHP Laravel, this project idea has been given me by
 ![1](https://github.com/younesghu/E-commerce/assets/142607475/da7fef0d-11b1-45ed-85a8-7e53ff8cd8ef)
 
 <p>
-    You can preview products and lookup for anything that you want in the search bar (this function basically looks for: name, description & categories. if anything matches it brings it to show up). At this example, I searched for word "apple" so I got the apple products back.
+    You can preview products and lookup for anything you want in the search bar (this function basically looks for: name, description & categories. if anything matches it brings it to show up). At this example, I searched for word "apple" so I got apple products back.
 </p>
 
 ![6](https://github.com/younesghu/E-commerce/assets/142607475/dad098c4-4e11-4268-8ac3-74585304e02b)
@@ -19,40 +19,40 @@ E-commerce project made with PHP Laravel, this project idea has been given me by
 ![13](https://github.com/younesghu/E-commerce/assets/142607475/ebc0a072-4c03-422b-8883-2532d2017e52)
 
 <p>
-    Here I made an account to test and add a product.
+    Here I made an account to test and add a new product.
 </p>
 
 ![4](https://github.com/younesghu/E-commerce/assets/142607475/e673a169-6250-4cdc-a42b-911ba9cc2ba8)
 
 
 <p>
-    Once logged in successfully, you get two additional options in your navbar. Manage products lets you check the products you own, and cart that lets you add products to it.
+    Once logged in, you get additional options in your navbar. Manage products lets you check the products you own, and cart that lets you add products to it and logout of course.
 </p>
 
 ![5](https://github.com/younesghu/E-commerce/assets/142607475/1f8626c2-8bab-461e-a340-860a8f2ea7ce)
 
 <p>
-    I tried to add a new product so I got sent at the create product page, like you see down here.
+    I tried to add a new product so I got transitioned to create product page, like you see down here.
 </p>
 
 ![7](https://github.com/younesghu/E-commerce/assets/142607475/707c2017-775a-42eb-9008-62114bcff9a0)
 
 
 <p>
-    Once you save everything, it appears on the main page organized by latest.
+    Once you save everything, it appears on the main page organized from newest to oldest.
 </p>
 
 ![8](https://github.com/younesghu/E-commerce/assets/142607475/41f5fcb0-024a-4e30-ab46-26466c71a896)
 
 <p>
-    I pressed manage products so as to see products related to my account. As expected, only the product that I've just added appeared. It gives full authority to the product owner to edit or delete.
+    I pressed manage products so as to see the products related to my account. As expected, only the product that I've just added appeared. It gives full authority to product owner to edit or delete.
 </p>
 
 ![9](https://github.com/younesghu/E-commerce/assets/142607475/b39f3671-08a8-4d1e-a72c-c65885513109)
 
 
 <p>
-    If the product owner wishes to edit his already existing product, you got sent here.
+    If the product owner wishes to edit his product, it transitions you to edit page.
 </p>
 
 ![10](https://github.com/younesghu/E-commerce/assets/142607475/5cb42b62-8d00-459f-9024-7bb9aba1c98b)
